@@ -1,0 +1,57 @@
+<div class="container">
+<div class="title">
+  <h1>Unit Converter</h1>
+</div>
+
+<div class="form-weight">
+  <div class="sub-title">
+    <h2> Weight unit converter </h2>
+  </div>
+  <span class="form">
+    <%= form_tag('/', method: 'get') do  %>
+      <%= label_tag :input_value, 'Insert Value' %>
+      <%= text_field_tag :input_value %>
+
+      <%= label_tag :input_unit, 'Form' %>
+      <%= select_tag :input_unit, options_for_select(['lbs', 'kg', 'tn']) %>
+
+      <%= label_tag :output_unit, 'To' %>
+      <%= select_tag :output_unit, options_for_select(['lbs', 'kg', 'tn']) %>
+
+      <%= submit_tag 'Convert' %>
+      <div class="result">
+        <%= @input_value %> <%= @input_unit %> <%= @result %> <%= @output_unit %>
+      </div>
+
+      <%= @message %>
+    <% end %>
+  </span>
+
+  </div>
+
+  <div class="from-lenght">
+
+    <div class="sub-title">
+      <h2>Length unit converter</h2>
+    </div>
+    <span class="form">
+      <%= form_tag('/', method: 'get') do  %>
+        <%= label_tag :input_lenght, 'Insert Value' %>
+        <%= text_field_tag :input_lenght %>
+
+        <%= label_tag :input_unit_lenght, 'Form' %>
+        <%= select_tag :input_unit_lenght, options_for_select(['meters', 'centimeters', 'milimeters']) %>
+
+        <%= label_tag :output_unit_lenght, 'To' %>
+        <%= select_tag :output_unit_lenght, options_for_select(['meters', 'centimeters', 'milimeters']) %>
+
+        <%= submit_tag 'Convert' %>
+
+        <div class="result">
+        <%= @input_lenght %> <%= @input_unit_lenght %> <%= @result_lenght %> <%= @output_unit_lenght %>
+        </div>
+        <%= @message %>
+      <% end %>
+    </span>
+  </div>
+</div>
