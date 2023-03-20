@@ -1,9 +1,8 @@
 class Pound
-  def self.convert_to_kg(unit)
-    unit * 0.453592
-  end
-
-  def self.convert_to_tn(unit)
-    unit * 0.0004535920000001679
+  def self.convert(unit, value)
+    case unit
+    when 'kg' then value * 0.453592
+    when 'tn' then value / 0.0004535920000001679
+    end
   end
 end

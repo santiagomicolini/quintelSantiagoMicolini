@@ -1,9 +1,8 @@
 class Milimeter
-  def self.convert_to_m(unit)
-    unit / 1000
-  end
-
-  def self.convert_to_cm(unit)
-    unit / 10
+  def self.convert(unit, input_lenght)
+    case unit
+    when 'meters' then input_lenght / 100
+    when 'centimeters' then input_lenght / 10
+    end
   end
 end
